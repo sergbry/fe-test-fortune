@@ -1,0 +1,514 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('assets/fonts/Rubik-Light.woff2') format('woff2'),
+        url('assets/fonts/Rubik-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('assets/fonts/Rubik-Medium.woff2') format('woff2'),
+    url('assets/fonts/Rubik-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    font-family: Rubik, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#rank-table {
+    width: 100%;
+    position: relative;
+    color: #262F56;
+    margin: 40px auto;
+}
+#rank-table .rank-table-wrapper {
+    width: 100%;
+    max-width: 809px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 16px 0;
+    border: 1px solid #D9EAFA;
+}
+
+#rank-table .rank-table-header {
+    padding: 25px 28px 20px;
+    border-bottom: 1px solid #D9EAFA;
+    display: flex;
+    justify-content: space-between;
+}
+
+#rank-table h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: #262F56;
+}
+
+#rank-table .more {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-image: url("assets/icons/desctop/more.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-color: #000;*/
+    margin-right: -11px;
+    margin-top: -1px;
+}
+
+#rank-table .rank-table-tabs {
+    display: flex;
+    justify-content: space-between; /* TODO: design-off */
+    padding: 26px 35px 22px 22px;
+    border-bottom: 1px solid #D9EAFA;
+    font-size: 14px;
+}
+
+#rank-table .rank-table-tabs > li.active {
+    font-weight: 500;
+}
+
+#rank-table .rank-table-tabs > li {
+    position: relative;
+    cursor: pointer;
+}
+
+#rank-table .rank-table-tabs > li.active:after {
+    content: "";
+    position: absolute;
+    width: 100%; /* TODO: design-off */
+    height: 3px;
+    bottom: -23px;
+    left: 0;
+    background-color: #00C659;
+}
+
+#rank-table-list {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+#rank-table-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    padding: 0 20px;
+    border-bottom: 1px solid #D9EAFA;
+}
+
+#rank-table-list > li .promo-logo {
+    width: 115px;
+    height: 20px;
+    position: relative;
+}
+
+#rank-table-list > li .promo-logo img {
+    width: 100%;
+    height: auto;
+}
+
+#rank-table-list > li .promo-logo.verified:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top:-10px;
+    right: -8px;
+    background-image: url("assets/icons/desctop/verified.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#rank-table-list > li .rating {
+    width: 124px;
+    text-decoration: none;
+    color: #262F56;
+}
+
+#rank-table-list > li .rating .stars {
+    background-image: url('assets/icons/desctop/star-empty.svg');
+    background-repeat: repeat-x;
+    background-position: left center;
+    background-size: contain;
+    width: 96px;
+    height: 16px;
+    display: inline-block;
+    margin-bottom: -3px;
+    position: relative;
+    /*transition: all 300ms ease-in-out;*/
+    transition: all 300ms cubic-bezier(.5, -1, .5, 2);
+}
+#rank-table-list > li .rating:hover .stars {
+    /*transform: translate3d(0, 10px, 100px);*/
+    transform: scale(1.4);
+    transform-origin: left center;
+    background-color: #ffffff;
+    /*transform: rotate(180deg);*/
+}
+
+#rank-table-list > li .rating .stars:before {
+    position: absolute;
+    content: '';
+    background-image: url('assets/icons/desctop/star-filled.svg');
+    background-repeat: repeat-x;
+    background-position: left center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#rank-table-list > li .rating .stars-4:before {
+    width: 80%;
+}
+
+#rank-table-list > li .rating .stars-3:before {
+    width: 60%;
+}
+
+#rank-table-list > li .rating .stars-2:before {
+    width: 40%;
+}
+
+#rank-table-list > li .rating .stars-1:before {
+    width: 20%;
+}
+
+#rank-table .rating .value {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+#rank-table-list > li .review {
+    position: relative;
+    padding-left: 20px;
+    width: 49px;
+}
+
+#rank-table-list > li .review:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: -2px;
+    background-image: url("assets/icons/desctop/chat.svg");
+    background-repeat: no-repeat;
+}
+
+
+
+
+/**
+ << Бейджики
+ */
+
+#rank-table .gift {
+    display: flex;
+    flex-direction: column;
+    width: 96px;
+    gap: 4px;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+#rank-table .badge {
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: -4px;
+}
+
+#rank-table .exclusive {
+    color: #B02BC8;
+    background-color: rgba(176, 43, 200, 0.12);
+}
+
+#rank-table .no-deposit {
+    color: #00C659;
+    background-color: rgba(0, 198, 89, 0.12);
+}
+
+#rank-table .no-bonus {
+    color: #C82B32;
+    background-color: rgba(200, 43, 50, 0.12);
+}
+
+/**
+ Бейджики >>
+ */
+#rank-table .gift .value {
+    text-align: center;
+    position: relative;
+    padding-left: 20px;
+    width: 96px;
+}
+
+#rank-table-list .gift .value:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: -2px;
+    background-image: url("assets/icons/desctop/gift.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+/**
+ << Кнопки
+ */
+#rank-table-list > li > .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 180px;
+}
+
+#rank-table-list > li > .buttons > a {
+    padding: 13px 24px;
+    margin-top: -3px;
+    border-radius: 6px;
+    display: block;
+    cursor: pointer;
+}
+
+#rank-table-list > li .buttons a {
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 500ms;
+}
+
+#rank-table-list > li .btn-review {
+    color: #262F56;
+    background-color: #F6F6F6;
+}
+
+#rank-table-list > li .btn-site {
+    color: #ffffff;
+    background-color: #00C659;
+}
+
+#rank-table-list > li .buttons a:hover {
+    box-shadow: 0 1px 1px 1px rgba(38, 47, 86, 0.2);
+}
+
+#rank-table-list > li .buttons a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 255, 255, 0.7),
+            transparent
+    );
+    transition: all 500ms;
+}
+
+#rank-table-list > li .buttons a:hover:before {
+    left: 100%;
+}
+
+/**
+ Кнопки >>
+ */
+
+/**
+ << Футер
+ */
+
+#rank-table .rank-table-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 20px 16px 18px;
+}
+
+#rank-table .rank-table-footer a {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#rank-table .rank-table-footer .footer-more a {
+    color: #262F56;
+    text-decoration: none;
+    position: relative;
+}
+#rank-table .rank-table-footer .footer-more a:after {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 12px;
+    top: 3px;
+    right: -21px;
+    background-image: url("assets/icons/desctop/row-right.svg");
+}
+
+#rank-table .rank-table-footer .footer-about a {
+    color: #00C659;
+}
+
+/**
+ Футер >>
+ */
+
+
+@media screen and (width < 749px) {
+
+    #rank-table .rank-table-wrapper {
+        border: none;
+        padding: 0;
+        border-radius: 8px;
+    }
+
+    #rank-table .rank-table-header {
+        border: 1px solid #D9EAFA;
+        border-radius: 8px 8px 0 0;
+        padding: 21px 21px 17px 10px;
+    }
+    #rank-table .more {
+        margin-top: -3px;
+    }
+
+    #rank-table h2 {
+        font-size: 18px;
+    }
+
+    #rank-table-list {
+        font-size: 12px;
+    }
+
+    #rank-table-list > li {
+        height: 56px;
+        padding: 0 12px;
+        border: 1px solid #D9EAFA;
+        border-top: none;
+    }
+
+    #rank-table-list > li:last-child {
+        border-radius: 0 0 8px 8px;
+    }
+
+    #rank-table-list > li .promo-logo {
+        width: 80px;
+        height: 14px;
+    }
+
+    #rank-table-list > li .promo-logo.verified:after {
+        width: 12px;
+        height: 12px;
+        top: -7px;
+        right: -5px;
+    }
+
+    #rank-table .rank-table-tabs {
+        display: none;
+    }
+
+    #rank-table-list > li .rating {
+        width: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-decoration: underline;
+        margin-left: 8px;
+    }
+    #rank-table-list > li .rating .stars {
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        /*transition: none;*/
+    }
+
+    #rank-table-list > li .rating .stars-4:before,
+    #rank-table-list > li .rating .stars-3:before,
+    #rank-table-list > li .rating .stars-2:before,
+    #rank-table-list > li .rating .stars-1:before {
+        width: 100%;
+    }
+    #rank-table-list > li .rating .stars:before {
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+    }
+
+    #rank-table .gift {
+        width: 66px;
+    }
+
+    #rank-table .badge {
+        font-size: 8px;
+        padding: 4px 6px;
+    }
+
+    #rank-table-list .gift .value:before {
+        width: 12px;
+        height: 12px;
+        left: 22px;
+        top: 0;
+    }
+
+    #rank-table-list > li > .buttons {
+        width: 116px;
+        font-size: 10px;
+    }
+    #rank-table-list > li > .buttons > a {
+        padding: 10px 13px;
+    }
+
+    #rank-table .rank-table-footer {
+        border: 1px solid #D9EAFA;
+        border-radius: 8px;
+        margin-top: 10px;
+        padding: 0;
+        display: block;
+    }
+    #rank-table .rank-table-footer a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 25px;
+        text-transform: uppercase;
+    }
+
+    #rank-table .rank-table-footer a:after {
+        display: none;
+    }
+
+    #rank-table .rank-table-footer .footer-about {
+        display: none;
+    }
+}
+
+@media screen and (width < 480px) {
+    #rank-table-list > li .review {
+        display: none;
+    }
+}

@@ -1,0 +1,41 @@
+/**
+    ОКРУЖЕНИЕ НАЧАЛО
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+header, footer {
+    background-color: #aaa;
+    height: 5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    padding: 16px;
+}
+
+p {
+    padding: 1rem 0;
+}
+
+#rank-table .design {
+    display: none;
+    position: absolute;
+    /*top: 0;*/
+    /*left: -28%;*/
+    /*opacity: 0;*/
+    top: -18px;
+    left: -16px;
+    opacity: 0.5;
+
+    /*z-index: -10;*/
+}

@@ -97,6 +97,13 @@ body {
     font-weight: 500;
 }
 
+#rank-table-list.loading {
+    height: 200px;
+    background-image: url("assets/img/wpspin-2x.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #rank-table-list > li {
     display: flex;
     align-items: center;
@@ -146,15 +153,15 @@ body {
     display: inline-block;
     margin-bottom: -3px;
     position: relative;
-    /*transition: all 300ms ease-in-out;*/
     transition: all 300ms cubic-bezier(.5, -1, .5, 2);
 }
-#rank-table-list > li .rating:hover .stars {
-    /*transform: translate3d(0, 10px, 100px);*/
-    transform: scale(1.4);
-    transform-origin: left center;
-    background-color: #ffffff;
-    /*transform: rotate(180deg);*/
+
+@media (hover: hover) {
+    #rank-table-list > li .rating:hover .stars {
+        transform: scale(1.4);
+        transform-origin: left center;
+        background-color: #ffffff;
+    }
 }
 
 #rank-table-list > li .rating .stars:before {
@@ -270,8 +277,6 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
-
-
 
 
 /**
